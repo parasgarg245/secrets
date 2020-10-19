@@ -63,8 +63,8 @@ passport.deserializeUser(function(id,done){
 
 
 passport.use(new GoogleStrategy({
-    clientID: "1002258577961 - om9j1aa2lfdaifaec2fjf1loirhjo9rh.apps.googleusercontent.com" ,
-    clientSecret: "vadilg9J7HPnJ5igKdJzSu8A",
+    clientID: 1002258577961-om9j1aa2lfdaifaec2fjf1loirhjo9rh.apps.googleusercontent.com ,
+    clientSecret: process.env.CLIENT_SECRET,
     callbackURL: "http://localhost:3000/auth/google/secrets",
     // userProfileURL:"https://www.googleapi.com/oauth2/v3/userinfo"
 },
@@ -77,8 +77,8 @@ passport.use(new GoogleStrategy({
 ));
 
 passport.use(new FacebookStrategy({
-    clientID: "1241857026193402",
-    clientSecret: "e7eb5de128250f1ddb53183377fe9b0a",
+    clientID: process.env.FACEBOOK_APP_ID,
+    clientSecret: process.env.FACEBOOK_APP_SECRET,
     callbackURL: "http://localhost:3000/auth/facebook/secrets"
 },
     function (accessToken, refreshToken, profile, cb) {
